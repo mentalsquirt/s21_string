@@ -7,6 +7,7 @@ char *s21_strcat(char *dest, const char *src) {
         while (*src != '\0') {
             dest[i] = *src;
             src++;
+            i++;
         }
     }
 
