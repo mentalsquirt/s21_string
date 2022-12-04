@@ -4,7 +4,7 @@ CC=gcc
 DEBUG=-g -DDEBUG
 CFLAGS=-Wall -Werror -Wextra -pedantic
 
-SRCS=s21_memchr.c s21_memcmp.c s21_memcpy.c s21_memmove.c s21_memset.c s21_strcat.c s21_strlen.c s21_strcmp.c
+SRCS=s21_memchr.c s21_memcmp.c s21_memcpy.c s21_memmove.c s21_memset.c s21_strcat.c s21_strlen.c s21_strcmp.c s21_strcpy.c s21_strchr.c s21_strstr.c
 OBJS=$(SRCS:.c=.o)
 
 EXIT_PATH=./
