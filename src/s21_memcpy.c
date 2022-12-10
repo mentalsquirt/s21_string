@@ -1,5 +1,4 @@
 #include "s21_string.h"
-#include <stdio.h>
 
 void *s21_memcpy(void *restrict dest, const void *restrict src, s21_size_t n) {
   unsigned char *dest_p = (unsigned char *)dest;
