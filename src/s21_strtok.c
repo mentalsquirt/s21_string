@@ -21,7 +21,7 @@ char *s21_strtok(char *str, const char *delim) {
   str = s21_strpbrk (token, delim);
   if (str == NULL)
     /* This token finishes the string.  */
-    olds = s21_memchr(token, '\0', 1024);`
+    olds = s21_memchr(token, '\0', 1024);
   else
     {
       /* Terminate the token and make OLDS point past it.  */
