@@ -7,6 +7,5 @@ char *s21_strpbrk(const char *s, const char *accept) {
       if (*a++ == *s) return (char*)s;
     s++;
   }
-
-  return NULL;
+  return S21_NULL;
 }
