@@ -92,8 +92,7 @@ START_TEST (test_strcpy) {
 }
 END_TEST
 
-START_TEST (test_strcmp)
-{
+START_TEST (test_strcmp) {
   char *s1 = get_random_str();
   char *s2 = get_random_str();
   ck_assert_int_eq(strcmp(s1, s2), s21_strcmp(s1, s2));
@@ -102,16 +101,14 @@ START_TEST (test_strcmp)
 }
 END_TEST
 
-START_TEST (test_strlen)
-{
+START_TEST (test_strlen) {
   char *str = get_random_str();
   ck_assert_int_eq(strlen(str), s21_strlen(str));
   free(str);
 }
 END_TEST
 
-START_TEST (test_strchr)
-{
+START_TEST (test_strchr) {
   char *str = get_random_str();
   char *target = str + (rand() % strlen(str));
   ck_assert_ptr_eq(strchr(str, *target), s21_strchr(str, *target));
@@ -119,8 +116,7 @@ START_TEST (test_strchr)
 }
 END_TEST
 
-START_TEST (test_strcat)
-{
+START_TEST (test_strcat) {
   char *s1 = get_random_str();
   char *s2 = get_random_str();
   char *expected_str = (char*) malloc(strlen(s1) + strlen(s2) + 1);
@@ -137,8 +133,7 @@ START_TEST (test_strcat)
 }
 END_TEST
 
-START_TEST (test_memmove)
-{
+START_TEST (test_memmove) {
   char *s1 = get_random_str();
   int len = strlen(s1);
   int offset = rand() % len;
@@ -152,8 +147,7 @@ START_TEST (test_memmove)
 }
 END_TEST
 
-START_TEST (test_memset)
-{
+START_TEST (test_memset) {
   char *s1 = get_random_str();
   int len = strlen(s1);
   char target = (char)(rand() % ('z' - 'a' + 1) + 'a');
@@ -211,7 +205,7 @@ int main(void) {
 
   SRunner *sr = srunner_create(s);
 
-  srunner_run_all(sr, CK_NORMAL);
+  for (int repeats = 0; repeats < 100; repeats++) srunner_run_all(sr, CK_NORMAL);
 
   int number_failed = srunner_ntests_failed(sr);
   srunner_free(sr);
